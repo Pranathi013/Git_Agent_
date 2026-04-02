@@ -1,0 +1,6 @@
+spec_version: "0.1.0"
+name: smart-push-agent
+version: 1.0.0
+description: Scans project folders, finds problems, and pushes to GitHub safely
+model:
+  preferred: gemini-2.0-flash
