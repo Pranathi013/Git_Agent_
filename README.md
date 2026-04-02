@@ -9,10 +9,12 @@ Scans your project folder for problems before pushing to GitHub.
 - 🟢 Bad Python practices
 
 ## How to run
-pip install google-generativeai gitpython python-dotenv
+```bash
+pip install groq gitpython python-dotenv
 python agent.py
+```
 
 ## Built with
 - GitAgent Standard
-- Gemini AI
+- Groq AI (Llama-3)
 - GitPython
