@@ -31,7 +31,6 @@ For EACH problem:
 4. Show CONS of NOT fixing it
 
 Keep your tone friendly, simple, and encouraging.
-Use emojis to make it easier to read.
 """
 
     try:
@@ -39,7 +38,7 @@ Use emojis to make it easier to read.
             messages=[
                 {
                     "role": "system",
-                    "content": "You are a helpful coding assistant. Always format your responses in clear markdown.",
+                    "content": "You are a helpful coding assistant. Format your responses in clear, concise markdown text without using emojis.",
                 },
                 {
                     "role": "user",
@@ -48,6 +47,7 @@ Use emojis to make it easier to read.
             ],
             model="llama-3.3-70b-versatile",
         )
-        return chat_completion.choices[0].message.content
+        msg = chat_completion.choices[0].message.content
+        return msg.replace('\r\n', '\n').replace('\r', '\n')
     except Exception as e:
         return f"⚠️ An error occurred with the Groq AI: {str(e)}"
